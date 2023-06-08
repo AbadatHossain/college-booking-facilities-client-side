@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import logImg from "../../src/assets/login.png";
+import logImg from "../../assets/login.png";
 import { useContext, useState } from "react";
 
 
@@ -9,9 +9,9 @@ import {
   signInWithPopup,
   GithubAuthProvider,
 } from "firebase/auth";
-import app from "../firebase/firebase.config";
+import app from "../../firebase/firebase.config";
 
-import { AuthContext } from "../providers/AuthProvider";
+import { AuthContext } from "../../providers/AuthProvider";
 
 
 const Login = () => {
