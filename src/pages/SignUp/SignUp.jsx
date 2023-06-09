@@ -4,6 +4,7 @@ import { useContext } from "react";
 
 
 import { AuthContext } from "../../providers/AuthProvider";
+import { saveUser } from "../../api/auth";
 
 const SignUp = () => {
     
@@ -20,6 +21,8 @@ const SignUp = () => {
 
         createUser(email, password)
         .then(result =>{
+          saveUser(result.user)
+          alert("signup successful")
             const loggedUser = result.user
             console.log(loggedUser)
         })
@@ -70,6 +73,19 @@ const SignUp = () => {
                   placeholder="  password"
                   className="input outline-double w-full mt-2 mb-2"
                 />
+
+
+{/* <label className="label">
+                  <span className="label-text"> confirm Password  :</span>
+                </label>
+                <input
+                  type="text"
+                  name="password"
+                  placeholder="  password"
+                  className="input outline-double w-full mt-2 mb-2"
+                /> */}
+
+
 
                 <div className="form-control">
                   <label className="label">

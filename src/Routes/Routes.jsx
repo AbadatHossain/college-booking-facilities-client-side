@@ -4,6 +4,9 @@ import Home from "../pages/Home/Home/Home";
 import Login from "../pages/Login/Login";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import SignUp from "../pages/SignUp/SignUp";
+import DashboardLayout from "../Layout/DashboardLayout";
+import Sidebar from "../components/Dashboard/Sidebar";
+
 
 const router = createBrowserRouter([
   {
@@ -24,6 +27,28 @@ const router = createBrowserRouter([
   {
     path:"/signup",
     element: <SignUp></SignUp>
-  }
+  },
+
+  {
+    path: '/dashboard',
+    element: (
+      
+        <DashboardLayout></DashboardLayout>
+      
+    ),
+    children: [
+      {
+        path: "/dashboard",
+        element: <Sidebar></Sidebar>
+      },
+      {
+        path: "/dashboard/myclasses",
+        element: <Login></Login>
+      }
+      
+      
+     
+    ],
+  },
 ]);
 export default router;
