@@ -8,6 +8,8 @@ import DashboardLayout from "../Layout/DashboardLayout";
 import Sidebar from "../components/Dashboard/Sidebar";
 import Classes from "../pages/Classes/Classes";
 import PrivateRoute from "../components/PrivateRoute";
+import RequiredStudent from "../components/RequiredStudent";
+import SelectedClass from "../components/Dashboard/SelectedClass";
 
 
 const router = createBrowserRouter([
@@ -55,7 +57,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/mySelectedClasses",
-        element: 
+        element: <RequiredStudent>
+          <SelectedClass></SelectedClass>
+        </RequiredStudent>
         // element: <SelectedClass></SelectedClass>
       },
       
