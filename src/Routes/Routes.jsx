@@ -53,7 +53,11 @@ const router = createBrowserRouter([
         path: "/dashboard",
         element: <Sidebar></Sidebar>
       },
-      
+      {
+        path: "/dashboard/mySelectedClasses",
+        element: 
+        // element: <SelectedClass></SelectedClass>
+      },
       
       
      
