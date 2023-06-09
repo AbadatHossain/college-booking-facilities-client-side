@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
+
 const SelectedClass = () => {
   const user = useContext(AuthContext);
   const [selectedClass, setSelectedClass] = useState([]);
@@ -13,11 +14,31 @@ const SelectedClass = () => {
     }
   }, [user.user]);
 
+
+  const handleDelete = (id) => {
+    const proceed = confirm("Are you sure to delete");
+    if (proceed) {
+      fetch(`http://localhost:8000/selectedClass/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.deletedCount > 0) {
+            alert("deleted successfully");
+          }
+        });
+    }
+  };
+
   return (
     <div>
+
+        
       {selectedClass.map((s, index) => (
+       
         <>
-         
+          key={s.id}
           <div className="overflow-x-auto">
             <table className="table w-full">
               {/* head */}
@@ -31,6 +52,7 @@ const SelectedClass = () => {
                   <th>Action</th>
                 </tr>
               </thead>
+
               <tbody>
                 {/* row 1 */}
                 <tr className="text-center">
@@ -52,7 +74,7 @@ const SelectedClass = () => {
                   <td>{s.availableSeats}</td>
                   <th>
                     <div className="card-actions justify-end">
-                      <button
+                      <button onClick={()=>handleDelete(s._id)}
                         style={{
                           backgroundColor: "green",
                           color: "white",
