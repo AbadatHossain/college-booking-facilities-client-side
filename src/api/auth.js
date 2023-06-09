@@ -3,6 +3,7 @@
 export const saveUser = user => {
     const currentUser = {
       email: user.email,
+      role:'student'
     }
   
     fetch(`http://localhost:8000/users/${user?.email}`, {

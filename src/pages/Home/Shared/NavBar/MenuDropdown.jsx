@@ -23,6 +23,21 @@ const MenuDropdown = () => {
             </button>
           )}
         </div>
+
+        <Link
+                  to="/dashboard"
+                  className="px-4 py-3 hover:bg-neutral-100 transition font-semibold"
+                >
+                 Instructors
+                </Link>
+
+                <Link
+                  to="/classes"
+                  className="px-4 py-3 hover:bg-neutral-100 transition font-semibold"
+                >
+                  Classes
+                </Link>
+
         {/* Dropdown btn */}
         <div
           onClick={() => setIsOpen(!isOpen)}
@@ -50,20 +65,6 @@ const MenuDropdown = () => {
                   className="px-4 py-3 hover:bg-neutral-100 transition font-semibold"
                 >
                   Dashboard
-                </Link>
-
-                <Link
-                  to="/dashboard"
-                  className="px-4 py-3 hover:bg-neutral-100 transition font-semibold"
-                >
-                 Instructors
-                </Link>
-
-                <Link
-                  to="/dashboard"
-                  className="px-4 py-3 hover:bg-neutral-100 transition font-semibold"
-                >
-                  Classes
                 </Link>
 
                 <div

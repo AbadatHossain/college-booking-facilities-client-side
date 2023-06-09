@@ -12,6 +12,7 @@ import {
 import app from "../../firebase/firebase.config";
 
 import { AuthContext } from "../../providers/AuthProvider";
+import { saveUser } from "../../api/auth";
 
 
 const Login = () => {
@@ -61,6 +62,7 @@ const Login = () => {
 
     signIn(email, password)
       .then((result) => {
+        saveUser(result.user)
         const user = result.user;
         setUser(user);
         form.reset();
