@@ -16,6 +16,7 @@ const SelectedClass = () => {
 
 
   const handleDelete = (id) => {
+    console.log(id)
     const proceed = confirm("Are you sure to delete");
     if (proceed) {
       fetch(`http://localhost:8000/selectedClass/${id}`, {
@@ -35,10 +36,9 @@ const SelectedClass = () => {
     <div>
 
         
-      {selectedClass.map((s, index) => (
-       
+      
         <>
-          key={s.id}
+       
           <div className="overflow-x-auto">
             <table className="table w-full">
               {/* head */}
@@ -55,7 +55,9 @@ const SelectedClass = () => {
 
               <tbody>
                 {/* row 1 */}
-                <tr className="text-center">
+                
+                {selectedClass.map((s, index)=><>
+                    <tr className="text-center">
                     <td className="mr-3">{index+1}</td>
                   <td>
                     {" "}
@@ -85,7 +87,7 @@ const SelectedClass = () => {
                       >
                         Delete
                       </button>
-                      <button
+                      <button 
                         style={{
                           backgroundColor: "green",
                           color: "white",
@@ -98,12 +100,14 @@ const SelectedClass = () => {
                       </button>
                     </div>
                   </th>
-                </tr>
+                </tr></>
+                    
+                )}
               </tbody>
             </table>
           </div>
         </>
-      ))}
+     
     </div>
   );
 };
