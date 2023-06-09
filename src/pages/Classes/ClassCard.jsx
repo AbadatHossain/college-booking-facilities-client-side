@@ -1,48 +1,52 @@
 // import axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 
-const ClassCard = (props) => {
-    const {getClass} = props
-    const user = useContext(AuthContext)
 
-    const handleSelect = (getClass)=>{
-    
-        // getClass.email = user?.user?.email
-        console.log(getClass)
+const ClassCard = ({ getClass, student }) => {
+  const user = useContext(AuthContext)
+  const navigate = useNavigate();
+  const { name, picture, instructorName, price, availableSeats } = getClass;
+  // console.log(student);
 
-        fetch(`http://localhost:8000/getClasses`, {
-            method: 'POST',
-            headers: {
-              'content-type': 'application/json',
-            },
-            body: JSON.stringify(getClass),
-          })
-            .then(res => res.json())
-            .then(data => console.log(data))
-        
+  const handleSelect = (getClass) => {
+
+    if (!user.user) {
+      console.log("user");
+      navigate('/login');
+      return
     }
 
-    return (
-        <div>
-           <div className="card w-96 bg-base-100 shadow-xl">
+    getClass.email = user?.user?.email
+    console.log(getClass)
+
+    fetch(`http://localhost:8000/selectedClass`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(getClass),
+    })
+      .then(res => res.json())
+      .then(data => console.log(data))
+
+  }
+
+  return (
+    <div>
+      <div className={`card w-96 ${availableSeats == 0 ? "bg-red-600 text-white" : "bg-base-100"} shadow-xl`}>
         <figure>
           <img
-            src={getClass.image}
+            src={picture}
             alt="Shoes"
           />
         </figure>
-        <div className="card-body">
-          <h2 className="card-title">Shoes!</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div className="card-actions justify-end">
-            <button onClick={()=>handleSelect(getClass)} className="btn btn-primary">Buy Now</button>
-          </div>
-        </div>
-      </div> 
-        </div>
-    );
+        
+      </div>
+    </div>
+  );
 };
 
 export default ClassCard;
