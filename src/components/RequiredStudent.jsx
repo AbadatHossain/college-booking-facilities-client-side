@@ -31,7 +31,20 @@ const RequiredStudent = ({ children }) => {
     }
   }, [user.user])
 
-  
+  if (loading) {
+    return (
+      <div>
+        <h1>Loading...</h1>
+      </div>
+    )
+  }
+
+  if (!user.user) {
+    return <Navigate to="/login" replace />
+  } else if (student) {
+    return children;
+  }
+
 
 };
 
