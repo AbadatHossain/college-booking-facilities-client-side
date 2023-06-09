@@ -36,14 +36,22 @@ const ClassCard = ({ getClass, student }) => {
 
   return (
     <div>
-      <div className={`card w-96 ${availableSeats == 0 ? "bg-red-600 text-white" : "bg-base-100"} shadow-xl`}>
-        <figure>
+      <div className={`card w-96 ${availableSeats == 0 ? "bg-red-600 text-white" : "bg-base-100"} shadow-xl px-5 mt-10`}>
+        <figure className="w-72 h-100% items-center">
           <img
             src={picture}
-            alt="Shoes"
+            alt="game"
           />
         </figure>
-        
+        <div className="card-body">
+          <h2 className="card-title">Class: {name}</h2>
+          <p> Instructor Name: {instructorName}</p>
+          <p> Available Seats: {availableSeats}</p>
+          <p> Price: {price}</p>
+          <div className="card-actions justify-end">
+            <button onClick={() => handleSelect(getClass)} style={{ backgroundColor: "green", color: "white", padding: "10px" }} disabled={availableSeats == 0 || student == false ? true : false} className="btn btn-primary">Select</button>
+          </div>
+        </div>
       </div>
     </div>
   );
