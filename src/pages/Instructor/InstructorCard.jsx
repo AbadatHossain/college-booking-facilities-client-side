@@ -4,15 +4,15 @@ const InstructorCard = ({ getInstructorClasses, instructor }) => {
 
    return (
     
-      <div className="card w-96 bg-white text-black mt-10">
+      <div className="card w-96 h-80  bg-white text-black mt-10">
       
-        <figure className="w-100% h-100% items-center">
+        <figure className="w-full h-100% object-cover items-center mb-3">
           <img
             src={picture}
             alt="picture"
           />
         </figure>
-        <div className="card-body">
+        <div className="card-body text-center">
           <h2 className="card-title">Name: {name}</h2>
           <h2 className="card-title">Email: {email}</h2>
           

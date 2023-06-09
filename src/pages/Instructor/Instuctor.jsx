@@ -46,7 +46,7 @@ const Instructor = () => {
 
 
   return (
-    <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-x-3 justify-between">
+    <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-x-3 justify-between">
         
       {
         getInstructorClasses?.map(getInstructorClasses => <InstructorCard
