@@ -62,7 +62,7 @@ const Login = () => {
 
     signIn(email, password)
       .then((result) => {
-        saveUser(result.user)
+        // saveUser(result.user)
         const user = result.user;
         setUser(user);
         form.reset();
@@ -93,6 +93,7 @@ const Login = () => {
                   name="email"
                   placeholder="  email"
                   className="input outline-double w-full mt-2 "
+                  required
                 />
               </div>
               <div className="form-control">
@@ -104,6 +105,7 @@ const Login = () => {
                   name="password"
                   placeholder="  password"
                   className="input outline-double w-full mt-2 mb-2 "
+                  required
                 />
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">

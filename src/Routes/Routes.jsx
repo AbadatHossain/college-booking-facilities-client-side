@@ -7,7 +7,7 @@ import SignUp from "../pages/SignUp/SignUp";
 import DashboardLayout from "../Layout/DashboardLayout";
 import Sidebar from "../components/Dashboard/Sidebar";
 import Classes from "../pages/Classes/Classes";
-import PrivateRoute from "../components/PrivateRoute";
+
 import RequiredStudent from "../components/RequiredStudent";
 import SelectedClass from "../components/Dashboard/SelectedClass";
 import Instructor from "../pages/Instructor/Instuctor";
@@ -17,6 +17,7 @@ import AddClasses from "../components/Dashboard/AddClasses";
 import MyClasses from "../components/Dashboard/MyClasses";
 import RequiredAdmin from "../components/RequiredAdmin";
 import ManageClasses from "../components/Dashboard/ManageClasses";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([

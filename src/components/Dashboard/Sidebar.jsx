@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../providers/AuthProvider'
 
@@ -8,11 +8,14 @@ import { AiOutlineBars } from 'react-icons/ai'
 import HostMenu from './HostMenu'
 import GuestMenu from './GuestMenu'
 import Logo from '../../pages/Home/Shared/NavBar/Logo'
+import axios from 'axios'
 
 const Sidebar = () => {
   const navigate = useNavigate()
   const [toggle, setToggle] = useState(false)
   const { user, logOut, role } = useContext(AuthContext)
+  const [userRole, setUserRole] = useState("");
+  console.log(userRole);
 
   const [isActive, setActive] = useState('false')
   const toggleHandler = event => {
@@ -26,6 +29,31 @@ const Sidebar = () => {
     logOut()
     navigate('/')
   }
+
+
+
+
+  useEffect(() => {
+    if (user) {
+      // setLoading(true);
+      axios.get(`http://localhost:8000/checkUser/${user.email}`)
+        .then(res => {
+          // console.log(res.data);
+          if (res.data) {
+            // setLoading(false);
+            setUserRole(res.data);
+          }
+        })
+        .catch(function (error) {
+          // handle error
+          console.log(error);
+        })
+    }
+  }, [user])
+
+
+
+
   return (
     <>
       {/* Small Screen Navbar */}
@@ -99,11 +127,26 @@ const Sidebar = () => {
                     </span>
                   </label>
                   {/* Menu Links */}
-                  {toggle ? <HostMenu /> : <GuestMenu />}
+                  {/* {toggle ? <HostMenu /> : <GuestMenu />} */}
+                  {userRole.role === "instructor" ? <HostMenu /> : userRole.role === "student" ? <GuestMenu /> : ""}
                 </>
-              ) : (
-                <GuestMenu />
-              )}
+              ) :
+                // <GuestMenu />
+                userRole.role === "instructor" ? <HostMenu /> : userRole.role === "student" ? <GuestMenu /> :
+                  <>
+                    <NavLink
+                      to='manageClasses'
+                      className={({ isActive }) =>
+                        `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${isActive ? 'bg-gray-300  text-gray-700' : 'text-gray-600'
+                        }`
+                      }
+                    >
+                      {/* <FcSettings className='w-5 h-5' /> */}
+
+                      <span className='mx-4 font-medium'>Manage Classes</span>
+                    </NavLink>
+                  </>
+              }
             </nav>
           </div>
         </div>

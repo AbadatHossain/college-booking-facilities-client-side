@@ -21,7 +21,7 @@ const PopularMenu = () => {
   return (
     <section>
       <SectionTitle
-        heading={"From  our Menu"}
+        heading={"From  our Game"}
         subHeading={"Popular Menu"}
       ></SectionTitle>
 

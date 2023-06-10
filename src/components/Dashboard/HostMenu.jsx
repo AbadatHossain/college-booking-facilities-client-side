@@ -5,10 +5,9 @@ const HostMenu = () => {
   return (
     <>
       <NavLink
-        to='add-room'
+        to='addClass'
         className={({ isActive }) =>
-          `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
-            isActive ? 'bg-gray-300  text-gray-700' : 'text-gray-600'
+          `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${isActive ? 'bg-gray-300  text-gray-700' : 'text-gray-600'
           }`
         }
       >
@@ -17,10 +16,9 @@ const HostMenu = () => {
         <span className='mx-4 font-medium'>Add Classes</span>
       </NavLink>
       <NavLink
-        to='my-listings'
+        to='myClasses'
         className={({ isActive }) =>
-          `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
-            isActive ? 'bg-gray-300  text-gray-700' : 'text-gray-600'
+          `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${isActive ? 'bg-gray-300  text-gray-700' : 'text-gray-600'
           }`
         }
       >
@@ -28,18 +26,17 @@ const HostMenu = () => {
 
         <span className='mx-4 font-medium'>My Classes</span>
       </NavLink>
-      <NavLink
+      {/* <NavLink
         to='manage-bookings'
         className={({ isActive }) =>
-          `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
-            isActive ? 'bg-gray-300  text-gray-700' : 'text-gray-600'
+          `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${isActive ? 'bg-gray-300  text-gray-700' : 'text-gray-600'
           }`
         }
       >
         <MdOutlineManageHistory className='w-5 h-5' />
 
-        <span className='mx-4 font-medium'> Manage Classes</span>
-      </NavLink>
+        <span className='mx-4 font-medium'>Manage Classes</span>
+      </NavLink> */}
     </>
   )
 }

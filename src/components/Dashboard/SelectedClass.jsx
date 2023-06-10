@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import axios from "axios";
 
 
 const SelectedClass = () => {
@@ -8,11 +9,14 @@ const SelectedClass = () => {
 
   useEffect(() => {
     if (user.user) {
-      fetch(`http://localhost:8000/selectedClass/${user.user.email}`)
-        .then((res) => res.json())
-        .then((data) => setSelectedClass(data));
+      getClasses();
     }
   }, [user.user]);
+  const getClasses = () => {
+    fetch(`http://localhost:8000/selectedClass/${user.user.email}`)
+      .then((res) => res.json())
+      .then((data) => setSelectedClass(data));
+  }
 
 
   const handleDelete = (id) => {
@@ -27,38 +31,52 @@ const SelectedClass = () => {
           console.log(data);
           if (data.deletedCount > 0) {
             alert("deleted successfully");
+            getClasses();
           }
         });
     }
   };
 
+  const handlePay = (data) => {
+    console.log(data);
+    const proceed = confirm("Are you sure you want to pay?");
+    if (proceed) {
+      axios.post(`http://localhost:8000/payment`, data)
+        .then(res => {
+          if (res.data) {
+            getClasses();
+          }
+        })
+    }
+  }
+
   return (
     <div>
 
-        
-      
-        <>
-       
-          <div className="overflow-x-auto">
-            <table className="table w-full">
-              {/* head */}
-              <thead>
-                <tr>
-                <th>#</th>
-                  <th>Image</th>
-                  <th>Name</th>
-                  <th>Instructor Name</th>
-                  <th>Available seat</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
 
-              <tbody>
-                {/* row 1 */}
-                
-                {selectedClass.map((s, index)=><>
-                    <tr className="text-center">
-                    <td className="mr-3">{index+1}</td>
+
+      <>
+
+        <div className="overflow-x-auto">
+          <table className="table w-full">
+            {/* head */}
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Instructor Name</th>
+                <th>Available seat</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {/* row 1 */}
+
+              {selectedClass.map((s, index) => <>
+                <tr className="text-center">
+                  <td className="mr-3">{index + 1}</td>
                   <td>
                     {" "}
                     <div className="avatar">
@@ -76,7 +94,7 @@ const SelectedClass = () => {
                   <td>{s.availableSeats}</td>
                   <th>
                     <div className="card-actions justify-end">
-                      <button onClick={()=>handleDelete(s._id)}
+                      <button onClick={() => handleDelete(s._id)}
                         style={{
                           backgroundColor: "green",
                           color: "white",
@@ -87,7 +105,7 @@ const SelectedClass = () => {
                       >
                         Delete
                       </button>
-                      <button 
+                      <button onClick={() => handlePay(s)}
                         style={{
                           backgroundColor: "green",
                           color: "white",
@@ -101,13 +119,13 @@ const SelectedClass = () => {
                     </div>
                   </th>
                 </tr></>
-                    
-                )}
-              </tbody>
-            </table>
-          </div>
-        </>
-     
+
+              )}
+            </tbody>
+          </table>
+        </div>
+      </>
+
     </div>
   );
 };

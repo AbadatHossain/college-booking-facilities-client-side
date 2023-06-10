@@ -2,37 +2,33 @@ import { Link, useNavigate } from "react-router-dom";
 import logImg from "../../assets/login.png";
 import { useContext } from "react";
 
-
 import { AuthContext } from "../../providers/AuthProvider";
 import { saveUser } from "../../api/auth";
 
 const SignUp = () => {
-    
   const navigate = useNavigate();
-    const {createUser} = useContext(AuthContext)
-    const handleSignUp = event =>{
-        event.preventDefault()
-        const form = event.target
-        const name = form.name.value
-        const email = form.email.value
-        const password = form.password.value
+  const { createUser } = useContext(AuthContext);
+  const handleSignUp = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
 
-        console.log(name, email, password)
+    console.log(name, email, password);
 
-        createUser(email, password)
-        .then(result =>{
-          
-          alert("signup successful")
-          saveUser(result.user)
-            const loggedUser = result.user
-            console.log(loggedUser)
-            navigate("/");
-        })
-        .catch(error => {
-            console.log(error)
-        })
-
-    }
+    createUser(email, password)
+      .then((result) => {
+        alert("signup successful");
+        saveUser(result.user);
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content mt-10 gap-3 flex flex-col lg:flex-row">
@@ -41,43 +37,50 @@ const SignUp = () => {
         </div>
         <div className="card flex-shrink-0 p-5 max-w-sm shadow-2xl bg-base-100 w-full">
           <div className="card-body w-full">
-            <h1 className="text-3xl font-bold text-center text-sky-500">Register now!</h1>
+            <h1 className="text-3xl font-bold text-center text-sky-500">
+              Register now!
+            </h1>
             <form onSubmit={handleSignUp}>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Name  :</span>
+                  <span className="label-text">Name :</span>
                 </label>
                 <input
                   type="text"
                   name="name"
                   placeholder="  name"
                   className="input outline-double w-full mt-2 mb-2"
+                  required
                 />
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Email  :</span>
+                  <span className="label-text">Email :</span>
                 </label>
                 <input
                   type="text"
                   name="email"
                   placeholder="  email"
                   className="input outline-double w-full mt-2 mb-2"
+                  required
                 />
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Password  :</span>
+                  <span className="label-text">Password :</span>
                 </label>
                 <input
-                  type="text"
+                  type="password"
                   name="password"
                   placeholder="  password"
                   className="input outline-double w-full mt-2 mb-2"
+                  required
+                  minLength={6}
+                  maxLength={20}
+                  // pattern="/^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])$/"
                 />
 
-
-{/* <label className="label">
+                {/* <label className="label">
                   <span className="label-text"> confirm Password  :</span>
                 </label>
                 <input
@@ -87,11 +90,9 @@ const SignUp = () => {
                   className="input outline-double w-full mt-2 mb-2"
                 /> */}
 
-
-
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text">PhotoURL  :</span>
+                    <span className="label-text">PhotoURL :</span>
                   </label>
                   <input
                     type="text"
@@ -107,7 +108,11 @@ const SignUp = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <input  className="btn bg-sky-500 w-full rounded-md py-3 text-white" type="submit" value="SignUp" />
+                <input
+                  className="btn bg-sky-500 w-full rounded-md py-3 text-white"
+                  type="submit"
+                  value="SignUp"
+                />
               </div>
             </form>
 
