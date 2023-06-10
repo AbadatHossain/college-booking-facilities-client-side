@@ -11,6 +11,12 @@ import PrivateRoute from "../components/PrivateRoute";
 import RequiredStudent from "../components/RequiredStudent";
 import SelectedClass from "../components/Dashboard/SelectedClass";
 import Instructor from "../pages/Instructor/Instuctor";
+import EnrolledClasses from "../components/Dashboard/EnrolledClasses";
+import RequiredInstructor from "../components/RequiredInstructor";
+import AddClasses from "../components/Dashboard/AddClasses";
+import MyClasses from "../components/Dashboard/MyClasses";
+import RequiredAdmin from "../components/RequiredAdmin";
+import ManageClasses from "../components/Dashboard/ManageClasses";
 
 
 const router = createBrowserRouter([
@@ -61,11 +67,10 @@ const router = createBrowserRouter([
         element: <RequiredStudent>
           <SelectedClass></SelectedClass>
         </RequiredStudent>
-        // element: <SelectedClass></SelectedClass>
       },
       
-      
-     
+
+
     ],
   },
 ]);

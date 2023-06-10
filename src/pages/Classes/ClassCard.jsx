@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 const ClassCard = ({ getClass, student }) => {
   const user = useContext(AuthContext)
   const navigate = useNavigate();
-  const { name, picture, instructorName, price, availableSeats } = getClass;
+  const { name, className, picture, instructorName, price, availableSeats } = getClass;
   // console.log(student);
 
   const handleSelect = (getClass) => {
@@ -36,7 +36,7 @@ const ClassCard = ({ getClass, student }) => {
 
   return (
     <div>
-      <div className={`card w-96 ${availableSeats == 0 ? "bg-red-600 text-white" : "bg-base-100"} shadow-xl mt-10 px-5`}>
+      <div className={`card w-96 ${availableSeats == 0 ? "bg-red-600 text-white" : "bg-base-100"} shadow-xl mt-10 py-10 px-5`}>
         <figure className="w-72 h-100% items-center">
           <img
             src={picture}
@@ -44,7 +44,9 @@ const ClassCard = ({ getClass, student }) => {
           />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">Class: {name}</h2>
+          <h2 className="card-title">Name: {name}</h2>
+          <h2 className="card-title">Class Name: {className}</h2>
+         
           <p> Instructor Name: {instructorName}</p>
           <p> Available Seats: {availableSeats}</p>
           <p> Price: {price}</p>

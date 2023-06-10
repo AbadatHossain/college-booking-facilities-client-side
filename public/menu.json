@@ -1,0 +1,49 @@
+[
+      
+    {
+          "_id": "648347c185eb44d5f123332f",
+          "name": "Football",
+          "price": 100,
+          "availableSeats": 20,
+          "picture": "https://i.ibb.co/Wf3kpX1/swipe1.jpg",
+          "instructorName": "Mr.John",
+          "category": "Football",
+          "className": "Six"
+        },
+        {
+          "_id": "648347c185eb44d5f1233330",
+          "name": "Basket",
+          "price": 150,
+          "availableSeats": 30,
+          "picture": "https://i.ibb.co/HG0kpGB/swipe4.jpg",
+          "instructorName": "Mr.John Rar",
+          "category": "Basket",
+          "className": "Seven"
+        },
+        {
+          "_id": "648347c185eb44d5f1233331",
+          "name": "Football",
+          "price": 100,
+          "availableSeats": 20,
+          "picture": "https://i.ibb.co/Wf3kpX1/swipe1.jpg",
+          "instructorName": "Mr.Ching",
+          "category": "Football",
+          "className": "Six"
+        },
+        {
+          "_id": "648347c185eb44d5f1244331",
+          "name": "Football",
+          "price": 90,
+          "availableSeats": 25,
+          "picture": "https://i.ibb.co/HG0kpGB/swipe4.jpg",
+          "instructorName": "Mr.Ching",
+          "category": "Football",
+          "className": "Eight"
+        }
+      ]
+   
+
+
+ 
+    
+    

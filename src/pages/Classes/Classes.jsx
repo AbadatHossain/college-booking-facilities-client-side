@@ -49,7 +49,9 @@ const Classes = () => {
       {
         getClasses?.map(getClass => <ClassCard
           key={getClass.id}
-          getClass={getClass} student={student}> </ClassCard>)
+          getClass={getClass}
+           student={student}
+           > </ClassCard>)
       }
     </div>
   );
