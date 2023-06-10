@@ -69,6 +69,30 @@ const router = createBrowserRouter([
         </RequiredStudent>
       },
       
+{
+        path: "/dashboard/myEnrolledClasses",
+        element: <RequiredStudent>
+          <EnrolledClasses></EnrolledClasses>
+        </RequiredStudent>
+      },
+      {
+        path: "/dashboard/addClass",
+        element: <RequiredInstructor>
+          <AddClasses></AddClasses>
+        </RequiredInstructor>
+      },
+      {
+        path: "/dashboard/myClasses",
+        element: <RequiredInstructor>
+          <MyClasses></MyClasses>
+        </RequiredInstructor>
+      },
+      {
+        path: "/dashboard/manageClasses",
+        element: <RequiredAdmin>
+          <ManageClasses></ManageClasses>
+        </RequiredAdmin>
+      },
 
 
     ],
