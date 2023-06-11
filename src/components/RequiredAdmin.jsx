@@ -1,6 +1,6 @@
-import { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../providers/AuthProvider';
-import axios from 'axios';
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../providers/AuthProvider";
+import axios from "axios";
 // import { Navigate } from 'react-router-dom';
 
 const RequiredAdmin = ({ children }) => {
@@ -12,8 +12,9 @@ const RequiredAdmin = ({ children }) => {
   useEffect(() => {
     if (user.user) {
       setLoading(true);
-      axios.get(`http://localhost:8000/checkAdmin/${user.user.email}`)
-        .then(res => {
+      axios
+        .get(`http://localhost:8000/checkAdmin/${user.user.email}`)
+        .then((res) => {
           console.log(res.data);
           if (res.data) {
             setLoading(false);
@@ -26,16 +27,16 @@ const RequiredAdmin = ({ children }) => {
         .catch(function (error) {
           // handle error
           console.log(error);
-        })
+        });
     }
-  }, [user.user])
+  }, [user.user]);
 
   if (loading) {
     return (
       <div>
         <h1>Loading...</h1>
       </div>
-    )
+    );
   } else if (!loading && admin) {
     return children;
   }

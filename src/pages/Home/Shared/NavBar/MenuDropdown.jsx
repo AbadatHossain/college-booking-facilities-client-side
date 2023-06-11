@@ -25,18 +25,18 @@ const MenuDropdown = () => {
         </div>
 
         <Link
-                  to="/instructor"
-                  className="px-4 py-3 hover:bg-neutral-100 transition font-semibold"
-                >
-                 Instructors
-                </Link>
+          to="/instructor"
+          className="px-4 py-3 hover:bg-neutral-100 transition font-semibold"
+        >
+          Instructors
+        </Link>
 
-                <Link
-                  to="/classes"
-                  className="px-4 py-3 hover:bg-neutral-100 transition font-semibold"
-                >
-                  Classes
-                </Link>
+        <Link
+          to="/classes"
+          className="px-4 py-3 hover:bg-neutral-100 transition font-semibold"
+        >
+          Classes
+        </Link>
 
         {/* Dropdown btn */}
         <div

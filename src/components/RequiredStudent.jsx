@@ -1,9 +1,8 @@
-import { useEffect, useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { Navigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { useContext } from "react";
-import axios from 'axios';
-
+import axios from "axios";
 
 const RequiredStudent = ({ children }) => {
   const [student, setStudent] = useState();
@@ -14,8 +13,9 @@ const RequiredStudent = ({ children }) => {
   useEffect(() => {
     if (user.user) {
       setLoading(true);
-      axios.get(`http://localhost:8000/user/${user.user.email}`)
-        .then(res => {
+      axios
+        .get(`http://localhost:8000/user/${user.user.email}`)
+        .then((res) => {
           if (res.data) {
             setLoading(false);
             setStudent(true);
@@ -27,25 +27,23 @@ const RequiredStudent = ({ children }) => {
         .catch(function (error) {
           // handle error
           console.log(error);
-        })
+        });
     }
-  }, [user.user])
+  }, [user.user]);
 
   if (loading) {
     return (
       <div>
         <h1>Loading...</h1>
       </div>
-    )
+    );
   }
 
   if (!user.user) {
-    return <Navigate to="/login" replace />
+    return <Navigate to="/login" replace />;
   } else if (student) {
     return children;
   }
-
-
 };
 
 export default RequiredStudent;

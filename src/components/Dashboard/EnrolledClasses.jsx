@@ -1,5 +1,5 @@
-import { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../../providers/AuthProvider';
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const EnrolledClasses = () => {
   const user = useContext(AuthContext);
@@ -14,15 +14,11 @@ const EnrolledClasses = () => {
     fetch(`http://localhost:8000/enrolledClasses/${user.user.email}`)
       .then((res) => res.json())
       .then((data) => setSelectedClass(data));
-  }
+  };
 
   return (
     <div>
-
-
-
       <>
-
         <div className="overflow-x-auto">
           <table className="table w-full">
             {/* head */}
@@ -40,25 +36,26 @@ const EnrolledClasses = () => {
             <tbody>
               {/* row 1 */}
 
-              {selectedClass.map((s, index) => <>
-                <tr className="text-center">
-                  <td className="mr-3">{index + 1}</td>
-                  <td>
-                    {" "}
-                    <div className="avatar">
-                      <div className="mask mask-squircle w-12 h-12 rounded">
-                        <img
-                          src={s.picture}
-                          alt="Avatar Tailwind CSS Component"
-                        />
+              {selectedClass.map((s, index) => (
+                <>
+                  <tr className="text-center">
+                    <td className="mr-3">{index + 1}</td>
+                    <td>
+                      {" "}
+                      <div className="avatar">
+                        <div className="mask mask-squircle w-12 h-12 rounded">
+                          <img
+                            src={s.picture}
+                            alt="Avatar Tailwind CSS Component"
+                          />
+                        </div>
                       </div>
-                    </div>
-                  </td>
-                  <td>{s.name}</td>
+                    </td>
+                    <td>{s.name}</td>
 
-                  <td>{s.instructorName}</td>
-                  <td>{s.availableSeats}</td>
-                  {/* <th>
+                    <td>{s.instructorName}</td>
+                    <td>{s.availableSeats}</td>
+                    {/* <th>
                     <div className="card-actions justify-end">
                       <button onClick={() => handleDelete(s._id)}
                         style={{
@@ -84,14 +81,13 @@ const EnrolledClasses = () => {
                       </button>
                     </div>
                   </th> */}
-                </tr></>
-
-              )}
+                  </tr>
+                </>
+              ))}
             </tbody>
           </table>
         </div>
       </>
-
     </div>
   );
 };

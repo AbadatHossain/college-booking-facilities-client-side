@@ -2,7 +2,6 @@ import { Link, useNavigate } from "react-router-dom";
 import logImg from "../../assets/login.png";
 import { useContext, useState } from "react";
 
-
 import {
   GoogleAuthProvider,
   getAuth,
@@ -14,9 +13,7 @@ import app from "../../firebase/firebase.config";
 import { AuthContext } from "../../providers/AuthProvider";
 import { saveUser } from "../../api/auth";
 
-
 const Login = () => {
-    
   const navigate = useNavigate();
   const { signIn } = useContext(AuthContext);
   const [error, setError] = useState(null);
@@ -47,7 +44,7 @@ const Login = () => {
       })
       .catch((error) => {
         setError(error.message);
-       console.log(error.message);
+        console.log(error.message);
       });
   };
 
@@ -78,7 +75,6 @@ const Login = () => {
           <img src={logImg} alt="" />
         </div>
         <div className="card flex-shrink-0 p-5 max-w-sm shadow-2xl bg-base-100 w-full">
-          
           <div className="card-body ">
             <h1 className="text-3xl font-bold text-center text-sky-500 mb-5">
               Login now!
@@ -98,7 +94,7 @@ const Login = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Password  :</span>
+                  <span className="label-text">Password :</span>
                 </label>
                 <input
                   type="text"
@@ -114,10 +110,12 @@ const Login = () => {
                 </label>
               </div>
 
-             
-
               <div className="form-control mt-6">
-                <input  className="btn bg-sky-500 w-full rounded-md py-3 text-white" type="submit" value="Login" />
+                <input
+                  className="btn bg-sky-500 w-full rounded-md py-3 text-white"
+                  type="submit"
+                  value="Login"
+                />
               </div>
             </form>
 
@@ -165,8 +163,3 @@ const Login = () => {
 };
 
 export default Login;
-
-
-
-
-

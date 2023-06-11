@@ -7,7 +7,6 @@ import SignUp from "../pages/SignUp/SignUp";
 import DashboardLayout from "../Layout/DashboardLayout";
 import Sidebar from "../components/Dashboard/Sidebar";
 import Classes from "../pages/Classes/Classes";
-
 import RequiredStudent from "../components/RequiredStudent";
 import SelectedClass from "../components/Dashboard/SelectedClass";
 import Instructor from "../pages/Instructor/Instuctor";
@@ -15,10 +14,10 @@ import EnrolledClasses from "../components/Dashboard/EnrolledClasses";
 import RequiredInstructor from "../components/RequiredInstructor";
 import AddClasses from "../components/Dashboard/AddClasses";
 import MyClasses from "../components/Dashboard/MyClasses";
-import RequiredAdmin from "../components/RequiredAdmin";
 import ManageClasses from "../components/Dashboard/ManageClasses";
+import RequiredAdmin from "../components/RequiredAdmin";
+import ManageUser from "../components/Dashboard/ManageUser";
 import PrivateRoute from "./PrivateRoute";
-
 
 const router = createBrowserRouter([
   {
@@ -33,69 +32,82 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path:"/login",
-    element: <Login></Login>
+    path: "/login",
+    element: <Login></Login>,
   },
   {
-    path:"/signup",
-    element: <SignUp></SignUp>
+    path: "/signup",
+    element: <SignUp></SignUp>,
   },
   {
-    path:"/instructor",
-    element: <Instructor></Instructor>
+    path: "/instructor",
+    element: <Instructor></Instructor>,
   },
- 
+
   {
     path: "/classes",
-    element: <Classes></Classes>
+    element: <Classes></Classes>,
   },
   {
-    path: '/dashboard',
+    path: "/dashboard",
     element: (
-      
-        <PrivateRoute>
-          <DashboardLayout></DashboardLayout>
-        </PrivateRoute>
-      
+      <PrivateRoute>
+        <DashboardLayout></DashboardLayout>
+      </PrivateRoute>
     ),
     children: [
       {
         path: "/dashboard",
-        element: <Sidebar></Sidebar>
+        element: <Sidebar></Sidebar>,
       },
       {
         path: "/dashboard/mySelectedClasses",
-        element: <RequiredStudent>
-          <SelectedClass></SelectedClass>
-        </RequiredStudent>
+        element: (
+          <RequiredStudent>
+            <SelectedClass></SelectedClass>
+          </RequiredStudent>
+        ),
       },
-      
-{
+      {
         path: "/dashboard/myEnrolledClasses",
-        element: <RequiredStudent>
-          <EnrolledClasses></EnrolledClasses>
-        </RequiredStudent>
+        element: (
+          <RequiredStudent>
+            <EnrolledClasses></EnrolledClasses>
+          </RequiredStudent>
+        ),
       },
       {
         path: "/dashboard/addClass",
-        element: <RequiredInstructor>
-          <AddClasses></AddClasses>
-        </RequiredInstructor>
+        element: (
+          <RequiredInstructor>
+            <AddClasses></AddClasses>
+          </RequiredInstructor>
+        ),
       },
       {
         path: "/dashboard/myClasses",
-        element: <RequiredInstructor>
-          <MyClasses></MyClasses>
-        </RequiredInstructor>
+        element: (
+          <RequiredInstructor>
+            <MyClasses></MyClasses>
+          </RequiredInstructor>
+        ),
       },
       {
         path: "/dashboard/manageClasses",
-        element: <RequiredAdmin>
-          <ManageClasses></ManageClasses>
-        </RequiredAdmin>
+        element: (
+          <RequiredAdmin>
+            <ManageClasses></ManageClasses>
+          </RequiredAdmin>
+        ),
       },
-
-
+      {
+        path: "/dashboard/manageUser",
+        element: (
+          <RequiredAdmin>
+            <ManageUser></ManageUser>
+          </RequiredAdmin>
+        ),
+      },
     ],
   },
 ]);
