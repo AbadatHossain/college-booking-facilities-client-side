@@ -57,7 +57,8 @@ const MyClasses = () => {
                     {" "}
                     <div className="avatar">
                       <div className="mask mask-squircle w-12 h-12">
-                        <img className="rounded"
+                        <img
+                          className="rounded"
                           src={s.picture}
                           alt="Avatar Tailwind CSS Component"
                         />
@@ -72,12 +73,7 @@ const MyClasses = () => {
                   <td>{s.feedback ? s.feedback : "None"}</td>
                   <th>
                     <div className="card-actions justify-end">
-                      <button
-                        
-                        className="bg-sky-500 p-2 rounded"
-                      >
-                        Update
-                      </button>
+                      <button className="bg-sky-500 p-2 rounded">Update</button>
                     </div>
                   </th>
                 </tr>
