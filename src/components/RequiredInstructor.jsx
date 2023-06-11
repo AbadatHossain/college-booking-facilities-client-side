@@ -14,7 +14,7 @@ const RequiredInstructor = ({ children }) => {
     if (user.user) {
       setLoading(true);
       axios
-        .get(`http://localhost:8000/checkInstructor/${user.user.email}`)
+        .get(`https://summer-camp-assignment-server.vercel.app/checkInstructor/${user.user.email}`)
         .then((res) => {
           console.log(res.data);
           if (res.data) {

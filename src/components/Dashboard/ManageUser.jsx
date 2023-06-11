@@ -9,13 +9,13 @@ const ManageUser = () => {
   }, []);
   const getUsers = () => {
     axios
-      .get("http://localhost:8000/getUsers")
+      .get("https://summer-camp-assignment-server.vercel.app/getUsers")
       .then((res) => setUsers(res.data));
   };
 
   const handleAdmin = (id) => {
     console.log(id);
-    axios.put(`http://localhost:8000/makeAdmin/${id}`).then((res) => {
+    axios.put(`https://summer-camp-assignment-server.vercel.app/makeAdmin/${id}`).then((res) => {
       if (res.data.acknowledged) {
         getUsers();
       }
@@ -24,7 +24,7 @@ const ManageUser = () => {
 
   const handleInstructor = (id) => {
     console.log(id);
-    axios.put(`http://localhost:8000/makeInstructor/${id}`).then((res) => {
+    axios.put(`https://summer-camp-assignment-server.vercel.app/makeInstructor/${id}`).then((res) => {
       if (res.data.acknowledged) {
         getUsers();
       }

@@ -13,7 +13,7 @@ const RequiredAdmin = ({ children }) => {
     if (user.user) {
       setLoading(true);
       axios
-        .get(`http://localhost:8000/checkAdmin/${user.user.email}`)
+        .get(`https://summer-camp-assignment-server.vercel.app/checkAdmin/${user.user.email}`)
         .then((res) => {
           console.log(res.data);
           if (res.data) {

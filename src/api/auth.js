@@ -6,7 +6,7 @@ export const saveUser = user => {
     role:'student'
   }
 
-  fetch(`http://localhost:8000/users/${user?.email}`, {
+  fetch(`https://summer-camp-assignment-server.vercel.app/users/${user?.email}`, {
     method: 'PUT',
     headers: {
       'content-type': 'application/json',

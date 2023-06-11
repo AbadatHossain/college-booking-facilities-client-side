@@ -3,7 +3,7 @@
 # Summer Camp Complete
 
 ## Live Link
-Hosted in Firebase -> [SchoolCamp](https://summer-camp-779b1.web.app/)
+Hosted in Firebase -> [SchoolCamp](https://summer-camp-779b1.web.app)
 
 ## Resources client Repository:
 Github Repo -> [Resources](https://github.com/programming-hero-web-course1/b712-summer-camp-client-side-AbadatHossain)

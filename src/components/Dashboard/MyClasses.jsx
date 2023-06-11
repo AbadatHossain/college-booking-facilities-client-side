@@ -22,7 +22,7 @@ const MyClasses = () => {
   useEffect(() => {
     if (user?.email) {
       axios
-        .get(`http://localhost:8000/getClassForInstructor/${user.email}`)
+        .get(`https://summer-camp-assignment-server.vercel.app/getClassForInstructor/${user.email}`)
         .then((res) => setMyClass(res.data));
     }
   }, [user]);

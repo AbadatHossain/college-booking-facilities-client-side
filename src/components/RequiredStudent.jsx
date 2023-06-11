@@ -14,7 +14,7 @@ const RequiredStudent = ({ children }) => {
     if (user.user) {
       setLoading(true);
       axios
-        .get(`http://localhost:8000/user/${user.user.email}`)
+        .get(`https://summer-camp-assignment-server.vercel.app/user/${user.user.email}`)
         .then((res) => {
           if (res.data) {
             setLoading(false);

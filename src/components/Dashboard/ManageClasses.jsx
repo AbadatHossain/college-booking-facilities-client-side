@@ -11,12 +11,12 @@ const ManageClasses = () => {
   }, []);
   const getClasses = () => {
     axios
-      .get(`http://localhost:8000/allClasses`)
+      .get(`https://summer-camp-assignment-server.vercel.app/allClasses`)
       .then((res) => setMyClass(res.data));
   };
 
   const handleApprove = (id) => {
-    axios.put(`http://localhost:8000/approveClass/${id}`).then((res) => {
+    axios.put(`https://summer-camp-assignment-server.vercel.app/approveClass/${id}`).then((res) => {
       if (res.data.acknowledged) {
         getClasses();
       }
@@ -30,7 +30,7 @@ const ManageClasses = () => {
 
   const handleDeny = () => {
     axios
-      .post(`http://localhost:8000/deny/${id}`, { feedback: feedback })
+      .post(`https://summer-camp-assignment-server.vercel.app/deny/${id}`, { feedback: feedback })
       .then((res) => {
         if (res.data.acknowledged) {
           setFeedback("");

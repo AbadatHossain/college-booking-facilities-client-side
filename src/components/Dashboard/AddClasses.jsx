@@ -12,7 +12,7 @@ const AddClasses = () => {
     data.availableSeats = Number(data.availableSeats);
     data.price = Number(data.price);
     console.log(data);
-    axios.post("http://localhost:8000/addClass", data).then((res) => {
+    axios.post("https://summer-camp-assignment-server.vercel.app/addClass", data).then((res) => {
       if (res.data.acknowledged) {
         console.log(res);
         reset();

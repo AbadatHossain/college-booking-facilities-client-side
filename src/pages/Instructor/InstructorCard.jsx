@@ -16,30 +16,3 @@ const InstructorCard = ({ getInstructorClasses, instructor }) => {
 };
 
 export default InstructorCard;
-
-
-
-
-
-[
-  {
-  "picture":"https://i.ibb.co/0QgPSmx/images-1.jpg",
-  "name":"Mr.John Doe",
-  "email":"john@gmail.com"
-  },
-  {
-  "picture":"https://i.ibb.co/QJNy1tT/images.jpg",
-  "name":"Mr.ching Joe",
-  "email":"ching@gmail.com"
-  },
-  {
-  "picture":"https://i.ibb.co/6D2fJDr/swipe4.jpg",
-  "name":"Mr. Joe Peter",
-  "email":"peter@gmail.com"
-  },
-  {
-  "picture":"https://i.ibb.co/vHLWkqN/images-2.jpg",
-  "name":"Mr.Joe Peter",
-  "email":"joe@gmail.com"
-  },
-  ]

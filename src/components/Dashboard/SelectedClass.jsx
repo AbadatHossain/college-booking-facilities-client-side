@@ -12,7 +12,7 @@ const SelectedClass = () => {
     }
   }, [user.user]);
   const getClasses = () => {
-    fetch(`http://localhost:8000/selectedClass/${user.user.email}`)
+    fetch(`https://summer-camp-assignment-server.vercel.app/selectedClass/${user.user.email}`)
       .then((res) => res.json())
       .then((data) => setSelectedClass(data));
   };
@@ -21,7 +21,7 @@ const SelectedClass = () => {
     console.log(id);
     const proceed = confirm("Are you sure to delete");
     if (proceed) {
-      fetch(`http://localhost:8000/selectedClass/${id}`, {
+      fetch(`https://summer-camp-assignment-server.vercel.app/selectedClass/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -39,7 +39,7 @@ const SelectedClass = () => {
     console.log(data);
     const proceed = confirm("Are you sure you want to pay?");
     if (proceed) {
-      axios.post(`http://localhost:8000/payment`, data).then((res) => {
+      axios.post(`https://summer-camp-assignment-server.vercel.app/payment`, data).then((res) => {
         if (res.data) {
           getClasses();
         }

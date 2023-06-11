@@ -11,7 +11,7 @@ const EnrolledClasses = () => {
     }
   }, [user.user]);
   const getClasses = () => {
-    fetch(`http://localhost:8000/enrolledClasses/${user.user.email}`)
+    fetch(`https://summer-camp-assignment-server.vercel.app/enrolledClasses/${user.user.email}`)
       .then((res) => res.json())
       .then((data) => setSelectedClass(data));
   };

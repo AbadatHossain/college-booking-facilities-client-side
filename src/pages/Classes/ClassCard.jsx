@@ -19,7 +19,7 @@ const ClassCard = ({ getClass, student }) => {
     getClass.email = user?.user?.email;
     console.log(getClass);
 
-    fetch(`http://localhost:8000/selectedClass`, {
+    fetch(`https://summer-camp-assignment-server.vercel.app/selectedClass`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

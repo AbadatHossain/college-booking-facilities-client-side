@@ -34,7 +34,7 @@ const Sidebar = () => {
     if (user) {
       // setLoading(true);
       axios
-        .get(`http://localhost:8000/checkUser/${user.email}`)
+        .get(`https://summer-camp-assignment-server.vercel.app/checkUser/${user.email}`)
         .then((res) => {
           // console.log(res.data);
           if (res.data) {

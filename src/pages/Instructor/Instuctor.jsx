@@ -14,9 +14,9 @@ const Instructor = () => {
     console.log(user)
     if (user.user) {
       axios
-        .get(`http://localhost:8000/user/${user.user.email}`)
+        .get(`https://summer-camp-assignment-server.vercel.app/user/${user.user.email}`)
 
-      // fetch(`http://localhost:8000/user/${user.user.email}`)
+      // fetch(`https://summer-camp-assignment-server.vercel.app/user/${user.user.email}`)
       // .then(res => res.json())
       .then((res) => {
           if (res.data) {
@@ -33,7 +33,7 @@ const Instructor = () => {
   console.log(getInstructorClasses);
 
   useEffect(() => {
-    fetch("http://localhost:8000/instructorClasses")
+    fetch("https://summer-camp-assignment-server.vercel.app/instructorClasses")
       .then((res) => res.json())
       .then((data) => setGetInstructorClasses(data));
   }, []);

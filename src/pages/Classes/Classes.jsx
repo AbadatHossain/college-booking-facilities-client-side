@@ -14,7 +14,7 @@ const Classes = () => {
   useEffect(() => {
     if (user.user) {
       axios
-        .get(`http://localhost:8000/user/${user.user.email}`)
+        .get(`https://summer-camp-assignment-server.vercel.app/user/${user.user.email}`)
         .then((res) => {
           if (res.data) {
             setStudent(true);
@@ -29,7 +29,7 @@ const Classes = () => {
 
   console.log(getClasses);
   useEffect(() => {
-    fetch("http://localhost:8000/getClasses")
+    fetch("https://summer-camp-assignment-server.vercel.app/getClasses")
       .then((res) => res.json())
       .then((data) => setGetClasses(data));
   }, []);
