@@ -11,10 +11,14 @@ const Instructor = () => {
   // console.log(instructor);
 
   useEffect(() => {
+    console.log(user)
     if (user.user) {
       axios
         .get(`http://localhost:8000/user/${user.user.email}`)
-        .then((res) => {
+
+      // fetch(`http://localhost:8000/user/${user.user.email}`)
+      // .then(res => res.json())
+      .then((res) => {
           if (res.data) {
             setInstructor(true);
           }
@@ -27,6 +31,7 @@ const Instructor = () => {
   }, [user.user]);
 
   console.log(getInstructorClasses);
+
   useEffect(() => {
     fetch("http://localhost:8000/instructorClasses")
       .then((res) => res.json())

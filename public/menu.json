@@ -1,59 +1,24 @@
-[
-      
-  {
-        "_id": "648347c185eb44d5f123332f",
-        "name": "Football",
-        "price": 100,
-        "availableSeats": 20,
-        "picture": "https://i.ibb.co/Wf3kpX1/swipe1.jpg",
-        "instructorName": "Mr.John",
-        "category": "Football",
-        "className": "Six"
+    [
+      {
+      "picture":"https://i.ibb.co/0QgPSmx/images-1.jpg",
+      "name":"Mr.John Doe",
+      "email":"john@gmail.com"
       },
       {
-        "_id": "648347c185eb44d5f1233330",
-        "name": "Basket",
-        "price": 150,
-        "availableSeats": 30,
-        "picture": "https://i.ibb.co/HG0kpGB/swipe4.jpg",
-        "instructorName": "Mr.John Rar",
-        "category": "Basket",
-        "className": "Seven"
+      "picture":"https://i.ibb.co/QJNy1tT/images.jpg",
+      "name":"Mr.ching Joe",
+      "email":"ching@gmail.com"
       },
       {
-        "_id": "648347c185eb44d5f1233331",
-        "name": "Football",
-        "price": 100,
-        "availableSeats": 20,
-        "picture": "https://i.ibb.co/Wf3kpX1/swipe1.jpg",
-        "instructorName": "Mr.Ching",
-        "category": "Football",
-        "className": "Six"
+      "picture":"https://i.ibb.co/6D2fJDr/swipe4.jpg",
+      "name":"Mr. Joe Peter",
+      "email":"peter@gmail.com"
       },
       {
-        "_id": "648347c185eb44d5f1244331",
-        "name": "Football",
-        "price": 90,
-        "availableSeats": 25,
-        "picture": "https://i.ibb.co/HG0kpGB/swipe4.jpg",
-        "instructorName": "Mr.Ching",
-        "category": "Football",
-        "className": "Eight"
-      },
-      {
-        "_id": "648347c185eb44d5f1244331",
-        "name": "Football",
-        "price": 90,
-        "availableSeats": 25,
-        "picture": "https://i.ibb.co/HG0kpGB/swipe4.jpg",
-        "instructorName": "Mr.Ching",
-        "category": "Football",
-        "className": "Eight"
+      "picture":"https://i.ibb.co/vHLWkqN/images-2.jpg",
+      "name":"Mr.Joe Peter",
+      "email":"joe@gmail.com"
       }
-    ]
- 
-
-
-
+        ]
   
   

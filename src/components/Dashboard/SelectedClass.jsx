@@ -90,14 +90,12 @@ const SelectedClass = () => {
                       <div className="card-actions justify-end">
                         <button
                           onClick={() => handleDelete(s._id)}
-                          
                           className="bg-sky-500 rounded p-2 mr-2"
                         >
                           Delete
                         </button>
                         <button
                           onClick={() => handlePay(s)}
-                          
                           className="bg-sky-500 rounded p-2"
                         >
                           Pay
