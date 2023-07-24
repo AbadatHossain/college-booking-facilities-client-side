@@ -19,23 +19,23 @@ const MenuDropdown = () => {
               className="cursor-pointer hover:bg-neutral-100 py-3 px-4 "
               disabled={!user}
             >
-              School Camp
+              Home
             </button>
           )}
         </div>
 
         <Link
-          to="/instructor"
+          to="/college"
           className="px-4 py-3 hover:bg-neutral-100 transition font-semibold"
         >
-          Instructors
+          College
         </Link>
 
         <Link
-          to="/classes"
+          to="/admission"
           className="px-4 py-3 hover:bg-neutral-100 transition font-semibold"
         >
-          Classes
+          Admission
         </Link>
 
         {/* Dropdown btn */}

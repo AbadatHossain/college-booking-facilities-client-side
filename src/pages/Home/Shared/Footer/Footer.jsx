@@ -9,9 +9,9 @@ const Footer = () => {
           <div>
             <img className="w-20 h-25 mb-10 rounded-2xl" src={logo} alt="" />
             <p>
-              School Game Campign
+              College Campign
               <br />
-              Providing reliable source in school
+              Providing reliable source in College
             </p>
           </div>
 

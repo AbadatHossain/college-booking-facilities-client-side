@@ -4,20 +4,11 @@ import Home from "../pages/Home/Home/Home";
 import Login from "../pages/Login/Login";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import SignUp from "../pages/SignUp/SignUp";
-import DashboardLayout from "../Layout/DashboardLayout";
-import Sidebar from "../components/Dashboard/Sidebar";
-import Classes from "../pages/Classes/Classes";
-import RequiredStudent from "../components/RequiredStudent";
-import SelectedClass from "../components/Dashboard/SelectedClass";
-import Instructor from "../pages/Instructor/Instuctor";
-import EnrolledClasses from "../components/Dashboard/EnrolledClasses";
-import RequiredInstructor from "../components/RequiredInstructor";
-import AddClasses from "../components/Dashboard/AddClasses";
-import MyClasses from "../components/Dashboard/MyClasses";
-import ManageClasses from "../components/Dashboard/ManageClasses";
-import RequiredAdmin from "../components/RequiredAdmin";
-import ManageUser from "../components/Dashboard/ManageUser";
-import PrivateRoute from "./PrivateRoute";
+import College from "../pages/College/College";
+import Admission from "../pages/Admission/Admission";
+
+
+
 
 const router = createBrowserRouter([
   {
@@ -40,75 +31,14 @@ const router = createBrowserRouter([
     element: <SignUp></SignUp>,
   },
   {
-    path: "/instructor",
-    element: <Instructor></Instructor>,
+    path: "/college",
+    element: <College></College>
   },
+  {
+    path: "/admission",
+    element: <Admission></Admission>
+  },
+  
 
-  {
-    path: "/classes",
-    element: <Classes></Classes>,
-  },
-  {
-    path: "/dashboard",
-    element: (
-      <PrivateRoute>
-        <DashboardLayout></DashboardLayout>
-      </PrivateRoute>
-    ),
-    children: [
-      {
-        path: "/dashboard",
-        element: <Sidebar></Sidebar>,
-      },
-      {
-        path: "/dashboard/mySelectedClasses",
-        element: (
-          <RequiredStudent>
-            <SelectedClass></SelectedClass>
-          </RequiredStudent>
-        ),
-      },
-      {
-        path: "/dashboard/myEnrolledClasses",
-        element: (
-          <RequiredStudent>
-            <EnrolledClasses></EnrolledClasses>
-          </RequiredStudent>
-        ),
-      },
-      {
-        path: "/dashboard/addClass",
-        element: (
-          <RequiredInstructor>
-            <AddClasses></AddClasses>
-          </RequiredInstructor>
-        ),
-      },
-      {
-        path: "/dashboard/myClasses",
-        element: (
-          <RequiredInstructor>
-            <MyClasses></MyClasses>
-          </RequiredInstructor>
-        ),
-      },
-      {
-        path: "/dashboard/manageClasses",
-        element: (
-          <RequiredAdmin>
-            <ManageClasses></ManageClasses>
-          </RequiredAdmin>
-        ),
-      },
-      {
-        path: "/dashboard/manageUser",
-        element: (
-          <RequiredAdmin>
-            <ManageUser></ManageUser>
-          </RequiredAdmin>
-        ),
-      },
-    ],
-  },
 ]);
 export default router;
