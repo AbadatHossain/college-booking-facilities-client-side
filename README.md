@@ -1,21 +1,21 @@
 
 
-# Summer Camp Complete
+# college-booking-facilities Complete
 
 ## Live Link
-Hosted in Firebase -> [SchoolCamp](https://summer-camp-779b1.web.app)
+Hosted in Firebase -> [CollegeFacilaties](https://college-booking-facilities.web.app)
 
 ## Resources client Repository:
-Github Repo -> [Resources](https://github.com/programming-hero-web-course1/b712-summer-camp-client-side-AbadatHossain)
+Github Repo -> [Resources](https://github.com/AbadatHossain/college-booking-facilities-client-side)
 
 ## Resources server Repository:
-Github Repo -> [Resources](https://github.com/programming-hero-web-course1/b7a12-summer-camp-server_side-AbadatHossain)
+Github Repo -> [Resources](https://github.com/AbadatHossain/college-booking-facilities-server-side)
 
 ## Hosted in server
-Hosted in vercel -> [SchoolCamp-assignment-server]
+Hosted in vercel -> [college-booking-facilities-task-server]
 
 ## Hosted in server
-Hosted in vercel -> [SchoolCamp](http://localhost:8000)
+Hosted in vercel -> [college-booking-facilities](http://localhost:8000/)
 
 ## Other Resources:
 Email Template Guide -> [Blog-Link](https://miracleio.me/snippets/use-gmail-with-nodemailer/)
